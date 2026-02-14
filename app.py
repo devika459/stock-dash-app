@@ -1,8 +1,6 @@
 from alpha_vantage.timeseries import TimeSeries
 
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import Dash, dcc, html
 from datetime import datetime as dt
 import svr_model
 
@@ -18,7 +16,7 @@ API_KEY = "8XSFYGIJTJ2CVDQC"
 ts = TimeSeries(key=API_KEY, output_format="pandas")
 
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
